@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8d879"><title>Flores amarillas para Karen</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Georgia,serif;color:#50391e;background:linear-gradient(#ffdca8,#fff1c9 48%,#9cbd78);overflow-x:hidden}main{width:min(850px,92%);margin:auto;padding:35px 0 110px}.hero{text-align:center;padding:15px 0 28px}.kicker{font:700 12px Arial;letter-spacing:.18em;text-transform:uppercase;color:#87632c}.bouquet{font-size:clamp(55px,12vw,92px);margin:12px;animation:sway 4s infinite ease-in-out}h1{font-size:clamp(35px,8vw,66px);margin:8px 0;color:#80501e;text-shadow:0 2px #fff8}.sub{font-style:italic;font-size:20px}.card,.music{background:#fff9e9ed;border:2px solid #e7bf51;border-radius:22px;padding:clamp(24px,6vw,48px);box-shadow:0 15px 35px #563c1e30;margin:20px 0}.card h2{text-align:center;color:#95651c;font-size:clamp(25px,6vw,36px);margin:0 0 24px}.message{white-space:pre-line;font-size:clamp(18px,4vw,22px);line-height:1.85}.message strong{color:#8c5d16}.end{text-align:center;color:#9b6a20;font-style:italic;font-size:23px;margin-top:25px}.music{text-align:center;padding:25px}.music h3{font-size:24px;margin:0 0 10px}button{border:0;border-radius:50px;padding:15px 24px;background:#f6c832;color:#553b13;font-size:17px;font-weight:bold;cursor:pointer}#player{display:none;width:100%;max-width:560px;aspect-ratio:16/9;margin:18px auto 0}.garden{position:fixed;bottom:0;left:0;width:100%;height:90px;display:flex;justify-content:space-around;align-items:flex-end;pointer-events:none;background:linear-gradient(transparent,#557d3c66);font-size:clamp(28px,5vw,48px);z-index:-1}.petal{position:fixed;top:-35px;pointer-events:none;animation:fall linear forwards}@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg) translateY(-6px)}}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}footer{text-align:center;margin-top:24px;font-size:18px}@media(prefers-reduced-motion:reduce){.bouquet{animation:none}.petal{display:none}}
+</style></head><body><main><header class="hero"><div class="kicker">Un detallito por el 21 de septiembre</div><div class="bouquet">🌼🌻🌼</div><h1>Para Karen Nicol Morales Barrera</h1><div class="sub">Unas florecitas amarillas, hechas con todo mi cariño 💛</div></header>
+<section class="card"><h2>🌻 HOLA MI VIDA PARA TI 🥺</h2><div class="message">Quería dedicarte estas flores amarillas por el 21 de septiembre porque te amo infinitamente mi niña y sé que estamos a distancia y no puedo darte en persona las flores amarillas que te mereces así que te las preparo por aquí bb en esta página
+
+Te amoo muchoo mi niña de ojitos bonitos❤️ Cuídate mucho, come bien y eres una persona muy especial para mi Te adoro y te mando muchos beshitos bb🥺
+
+<strong>NUNCA OLVIDES Q ERES Y SIEMPRE SERÁS LA MUJER DE MI VIDA Y TAMPOCO OLVIDES Q TE AMO MUCHOTE MI CHIQUISTRIKIS</strong>❤️‍🩹
+
+Con cariño, te mando estas florecitas amarillas. 🌻</div><div class="end">Con todo mi cariño para ti, Karen 🌻❤️</div></section>
+<section class="music"><h3>🎵 Una canción para ti 🎵</h3><p>Estas florecitas también llevan una canción para ti 💛</p><button id="toggle" onclick="toggleMusic()">🌻 Reproducir nuestra canción</button><div id="player"></div></section><footer>Feliz 21 de septiembre, Karen 🌻💛</footer></main>
+<div class="garden" aria-hidden="true"><span>🌻</span><span>🌼</span><span>🌻</span><span>🌼</span><span>🌻</span><span>🌼</span></div>
+<script>
+let player=null,ready=false,playing=false;
+function load(){let s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s)}
+window.onYouTubeIframeAPIReady=()=>{ready=true;player=new YT.Player('player',{videoId:'S7gMzYqXIZc',playerVars:{playsinline:1,rel:0},events:{onStateChange:e=>{playing=e.data===YT.PlayerState.PLAYING;document.getElementById('toggle').textContent=playing?'⏸️ Pausar canción':'🌻 Reproducir nuestra canción'}}})};
+function toggleMusic(){document.getElementById('player').style.display='block';if(!ready||!player){document.getElementById('toggle').textContent='⏳ Cargando canción...';return}playing?player.pauseVideo():player.playVideo()}
+load();
+function petal(){let e=document.createElement('span');e.className='petal';e.textContent=Math.random()>.5?'🌼':'🌻';e.style.left=Math.random()*100+'vw';e.style.fontSize=(17+Math.random()*18)+'px';e.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),13000)}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(petal,1100);
+</script></body></html>
